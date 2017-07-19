@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    div {
+      position: relative;
+      overflow: hidden;
+      width: 300px;
+      height: 150px;
+      margin: 100px auto;
+    }
+    button {
+      position: absolute;
+      z-index: 20;
+      display: block;
+      top: 110px;
+      left: 130px;
+      width: 40px;
+      height: 40px;
+      line-height: 20px;
+      text-align: center;
+      outline: none;
+      border: none;
+      border-radius: 20px;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    ul {
+      position: absolute;
+      overflow: hidden;
+      width: 300px;
+      height: 300px;
+      margin-bottom: -150px;
+      border-radius: 150px 150px 0 0;
+      /*background-color: #eee;*/
+      list-style: none;
+    }
+    ul li {
+      position: absolute;
+      top: 150px;
+      left: 150px;
+      width: 150px;
+      height: 106px;
+      transition: 1s;
+      transform-origin: 0% 0%;
+    }
+    .active li:first-child
+    /*ul:hover li:first-child*/ {
+      transform: rotate(-180deg);
+      background-color: #1abc9c;
+    }
+    .active li:nth-child(2)
+    /*ul:hover li:nth-child(2)*/ {
+      transform: rotate(-135deg);
+      background-color: #16a085;
+    }
+    .active li:nth-child(3)
+    /*ul:hover li:nth-child(3)*/ {
+      transform: rotate(-90deg);
+      background-color: #2ecc71;
+    }
+    .active li:last-child
+    /*ul:hover li:last-child*/ {
+      transform: rotate(-45deg);
+      background-color: #27ae60;
+    }
+    ul li span {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+    }
+    ul li:first-child span {
+      transform: rotate(180deg);
+    }
+    ul li:nth-child(2) span {
+      transform: rotate(135deg);
+    }
+    ul li:nth-child(3) span {
+      transform: rotate(90deg);
+    }
+    ul li:last-child span {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button type="button">+</button>
+    <ul>
+      <li><a href="#"><span>A</span></a></li>
+      <li><a href="#"><span>B</span></a></li>
+      <li><a href="#"><span>C</span></a></li>
+      <li><a href="#"><span>D</span></a></li>
+    </ul>
+  </div>
+  <p>123456</p>
+  <script type="text/javascript">
+    const btn = document.querySelector("button");
+    const nav = document.querySelector("ul");
+    btn.onclick = function() {
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex-layout</title>
+  <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/HTML5/128/HTML_Styling.png">
+  <link rel="stylesheet" href="./font-awesome-4.7.0 2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="flex-nav">
+      <a href="javascript:;" class="toggle-nav"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Menu</a>
+      <ul>
+        <li><a href="#">坤(地)</a></li>
+        <li><a href="#">艮(山)</a></li>
+        <li><a href="#">坎(水)</a></li>
+        <li><a href="#">巽(风)</a></li>
+        <li class="item-5"><a href="#">震(雷)</a></li>
+        <li class="social">
+          <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        </li>
+        <li class="social">
+          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+        <li class="social">
+          <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <header class="top">
+      <h1>Enjoy using the Flexbox</h1>
+    </header>
+
+    <section class="slider">
+      <div class="overflow-container">
+        <div class="slider-image">
+          <div class="slide active super-active" data-slide-order="0">
+            <div class="fade-slide"></div>
+            <figure>
+              <img class="slide__img" src="img/1.jpeg" alt="">
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <div class="slide" data-slide-order="1">
+            <div class="fade-slide"></div>
+            <figure>
+              <img class="slide__img" src="img/2.jpeg" alt="">
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <div class="slide" data-slide-order="2">
+            <div class="fade-slide"></div>
+            <figure>
+              <img class="slide__img" src="img/3.jpeg" alt="">
+              <figcaption></figcaption>
+            </figure>
+          </div>
+        </div>
+        <nav class="slider-nav">
+          <ul>
+            <li  class="arrow"><a href="javascript:;"><span>❮</span></a></li>
+            <li><a href="javascript:;"><span>Client</span></a></li>
+            <li><a href="javascript:;"><span>Browser gets data from the Internet.</span></data></a></li>
+            <li><a href="javascript:;"><span>Protocal is communication rule between Client and Server.</span></a></li>
+            <li><a href="javascript:;"><span>Server</span></a></li>
+            <li  class="arrow"><a href="javascript:;"><span>❯</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <!-- flex container -->
+    <section class="pricing-grid">
+      <div class="plan plan-1">
+        <h2>🐱Cat</h2>
+        <p>Common, yet regarded by many as the worst house pet.</p>
+        <ul class="features">
+          <li>Stretch everything</li>
+          <li>Easily lost for days</li>
+          <li>Kind of a bummer</li>
+        </ul>
+        <p class="price">Free</p>
+        <a href="#" class="more">Really?</a>
+      </div>
+      <div class="plan plan-2">
+        <h2>🐶Dog</h2>
+        <p>Loving, gentle and caring. Dogs are the best house pet to have and will increase happiness ten fold.</p>
+        <ul class="features">
+          <li>Super fun</li>
+          <li>Friends love them</li>
+          <li>Plays games</li>
+          <li>Not a cat</li>
+        </ul>
+        <p class="price">$90</p>
+        <a href="#" class="more">Best deal</a>
+      </div>
+      <div class="plan plan-3">
+        <h2>🐠Fish</h2>
+        <p>Cheat n' easy.</p>
+        <ul class="features">
+          <li>Eats flakes</li>
+          <li>Cop out</li>
+          <li>Replaceable</li>
+        </ul>
+        <p class="price">$3</p>
+        <a href="#" class="more">Ah</a>
+      </div>
+    </section>
+
+    <section class="detail"></section>
+    <footer>
+      <p>&commat;poplar_rain</p>
+    </footer>
+  </div>
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>

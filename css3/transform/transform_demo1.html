@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>transform</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    div {
+      /*overflow: hidden;*/
+      width: 300px;
+      height: 150px;
+      margin: 100px auto;
+    }
+    ul {
+      position: relative;
+      overflow: hidden;
+      width: 300px;
+      height: 300px;
+      margin-bottom: -150px;
+      border-radius: 150px 150px 0 0;
+      background-color: #eee;
+      list-style: none;
+    }
+    ul li {
+      position: absolute;
+      right: 150px;
+      bottom: 150px;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      transition: 1s;
+      transform-origin: 100% 100%;
+    }
+    ul li:first-child {
+      transform: /*rotate(-180deg)*/ skew(45deg);
+      background-color: #1abc9c;
+    }
+    ul li:nth-child(2) {
+      transform: rotate(45deg) skewX(45deg);
+      background-color: #16a085;
+    }
+    ul li:nth-child(3) {
+      transform: rotate(90deg) skewX(45deg);
+      background-color: #2ecc71;
+    }
+    ul li:last-child {
+      transform: rotate(135deg) skewX(45deg);
+      background-color: #27ae60;
+    }
+    ul li a {
+      position: absolute;
+      right: -150px;
+      bottom: -150px;
+      display: block;
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .3);
+      transform-origin: 50% 50%;
+    }
+    ul li:first-child a {
+      transform: skew(-45deg) rotate(-67.5deg);
+    }
+    
+    ul li:nth-child(2) a {
+      transform: skewX(-45deg) rotate(-67.5deg);
+    }
+    ul li:nth-child(3) a {
+      transform: skewX(-45deg) rotate(-67.5deg);
+    }
+    ul li:last-child a {
+      transform: skewX(-45deg) rotate(-67.5deg);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li><a href="#"><span>A</span></a></li>
+      <li><a href="#"><span>B</span></a></li>
+      <li><a href="#"><span>C</span></a></li>
+      <li><a href="#"><span>D</span></a></li>
+    </ul>
+  </div>
+  <p>123456</p>
+</body>
+</html>
