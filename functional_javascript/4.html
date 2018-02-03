@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="underscore.js" charset="utf-8"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    // function can be passed to other functions
+    // function can be returned from functions
+
+    _.max([1, 2, 3, 4]);
+
+    var people = [{name: 'Fred', age: 65}, {name: 'Lucy', age: 36}];
+
+    _.max(people, function(p) { return p.age });
+
+    function finder(valueFun, bestFun, coll) {
+      return _.reduce(coll, function(best, current) {
+        var bestValue = valueFun(best);
+        var currentValue = valueFun(current);
+
+        return (bestValue === bestFun(bestValue, currentValue)) ? best : current;
+      });
+    }
+
+    // valuefun: _.identity
+    // bestFun: _.Math.max
+    //
+
+    console.log(finder(_.identity, Math.max, [1,2,3,4,5]));
+    // in the realm of functional programming one needs to think in terms of
+    // functions, even when the best value is a value itself.
+
+    console.log(finder(plucker('age'), Math.max, people));
+
+    console.log(finder(plucker('name'),
+                       function(x, y) { return (x.charAt(0) === 'L') ? x : y},
+                       people));
+
+    // the implementation of finder can be tightened by making two assumption
+    // - that the best-value function returns true if the first arguments is
+    //   'better' than the second argument
+    // - that the best-value function knows how to 'unwrap' its arguments
+
+    function best(fun, coll) {
+      return _.reduce(coll, function(x, y) {
+        return fun(x, y) ? x : y
+      });
+    }
+
+    // tighter and more elegant
+    console.log(best(function(x, y) { return x > y}, [1,2,3,4,5]));
+
+    function repeat(times, VALUE) {
+      return _.map(_.range(times), function() {
+        return VALUE;
+      });
+    }
+
+    repeat(4, 'Major');
+
+    function repeatedly(tiems, fun) {
+      return _.map(_.range(tiems), fun);
+    }
+
+    console.log(repeatedly(3, function() {
+      return Math.floor((Math.random()*10) + 1);
+    }));
+
+    
+
+  </script>
+</body>
+</html>
